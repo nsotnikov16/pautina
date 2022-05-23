@@ -2,6 +2,8 @@
   padding: 105px 0 135px;
   background-image: url(../img/backgrounds/why.png);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
   @media (max-width: 480px) {
     background-image: url(../img/backgrounds/why-mobile.png);
     padding: 45px 0 80px;
@@ -29,6 +31,13 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    &:hover {
+      cursor: pointer;
+      .why__tooltip {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   &__block {
@@ -36,13 +45,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    &:hover {
-      cursor: pointer;
-      & + .why__tooltip {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
   }
 
   &__circle {

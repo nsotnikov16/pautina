@@ -1,4 +1,9 @@
 .section {
+  padding: 40px 0 80px;
+
+  @media (max-width: 767px) {
+    padding: 45px 0 35px;
+  }
   &__title {
     font-family: "Philosopher";
     font-style: normal;
@@ -38,6 +43,20 @@
 
   &_price-visit {
     padding: 96px 0 22px;
+
+    @media (max-width: 560px) {
+      padding-top: 50px;
+    }
+  }
+
+  &_emotional {
+    padding-bottom: 30px;
+  }
+
+  &_rent {
+    @media (max-width: 560px) {
+      padding-top: 55px;
+    }
   }
 }
 
@@ -58,8 +77,55 @@
   padding: 10px 26px;
 
   &:hover {
-    background-color: #0099C9;;
+    background-color: #0099c9;
+  }
+
+  &_all {
+    margin: 25px auto 0;
+    padding: 21px 42px 21px 55px;
+    background-color: $green;
+    border: 1px solid #007296;
+    color: #007296;
+
+    &:hover {
+      background-color: #007296;
+      color: #ffffff;
+    }
   }
 }
 
+.font-ph {
+  font-family: "Philosopher";
+}
+.font-mont {
+  font-family: "Montserrat";
+}
 
+.fs-18 {
+  font-size: 18px;
+}
+
+.f-i {
+  font-style: italic;
+}
+
+.info {
+  padding-bottom: 2px;
+  border-bottom: 1px dotted #007296;
+  cursor: pointer;
+}
+
+.time-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::before {
+    content: "";
+    background-image: url(../img/time-icon.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+  }
+}

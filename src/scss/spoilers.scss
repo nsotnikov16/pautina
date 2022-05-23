@@ -27,6 +27,10 @@
         @media(max-width: 560px) {
             border-bottom: 0;
             text-decoration: underline 1px dashed #007296 ;
+
+            &.minwidth {
+              max-width: 200px;
+            }
         }
       }
 
@@ -45,7 +49,7 @@
         }
 
         &::before {
-          transform: rotate(-45deg) translate(2px, 2px);
+          transform: rotate(-45deg) translate(3px, 1px);
         }
       }
     }
@@ -59,7 +63,7 @@
 
   &__bottom {
     max-height: 0;
-    transition: max-height 0.1s ease-in-out;
+    transition: max-height 0.15s ease-in-out, visibility 0.05s linear;
     visibility: hidden;
   }
 

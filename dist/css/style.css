@@ -505,6 +505,14 @@ body {
 
 /* Контент */
 /* Прочее */
+.section {
+  padding: 40px 0 80px;
+}
+@media (max-width: 767px) {
+  .section {
+    padding: 45px 0 35px;
+  }
+}
 .section__title {
   font-family: "Philosopher";
   font-style: normal;
@@ -546,6 +554,19 @@ body {
 .section_price-visit {
   padding: 96px 0 22px;
 }
+@media (max-width: 560px) {
+  .section_price-visit {
+    padding-top: 50px;
+  }
+}
+.section_emotional {
+  padding-bottom: 30px;
+}
+@media (max-width: 560px) {
+  .section_rent {
+    padding-top: 55px;
+  }
+}
 
 .blue {
   color: #007296;
@@ -564,7 +585,55 @@ body {
   padding: 10px 26px;
 }
 .btn:hover {
-  background-color: #0099C9;
+  background-color: #0099c9;
+}
+.btn_all {
+  margin: 25px auto 0;
+  padding: 21px 42px 21px 55px;
+  background-color: #f1fcf6;
+  border: 1px solid #007296;
+  color: #007296;
+}
+.btn_all:hover {
+  background-color: #007296;
+  color: #ffffff;
+}
+
+.font-ph {
+  font-family: "Philosopher";
+}
+
+.font-mont {
+  font-family: "Montserrat";
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.f-i {
+  font-style: italic;
+}
+
+.info {
+  padding-bottom: 2px;
+  border-bottom: 1px dotted #007296;
+  cursor: pointer;
+}
+
+.time-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.time-icon::before {
+  content: "";
+  background-image: url(../img/time-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
 }
 
 /* Почему у нас хорошо? */
@@ -572,6 +641,8 @@ body {
   padding: 105px 0 135px;
   background-image: url(../img/backgrounds/why.png);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 @media (max-width: 480px) {
   .section_why {
@@ -606,18 +677,18 @@ body {
   align-items: center;
   position: relative;
 }
+.why__item:hover {
+  cursor: pointer;
+}
+.why__item:hover .why__tooltip {
+  opacity: 1;
+  visibility: visible;
+}
 .why__block {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.why__block:hover {
-  cursor: pointer;
-}
-.why__block:hover + .why__tooltip {
-  opacity: 1;
-  visibility: visible;
 }
 .why__circle {
   width: 136px;
@@ -798,6 +869,9 @@ body {
     border-bottom: 0;
     text-decoration: underline 1px dashed #007296;
   }
+  .spoiler__click span:nth-child(1).minwidth {
+    max-width: 200px;
+  }
 }
 .spoiler__click span:nth-child(2)::after, .spoiler__click span:nth-child(2)::before {
   width: 11px;
@@ -810,7 +884,7 @@ body {
   transform: rotate(45deg) translate(-5px, 1px);
 }
 .spoiler__click span:nth-child(2)::before {
-  transform: rotate(-45deg) translate(2px, 2px);
+  transform: rotate(-45deg) translate(3px, 1px);
 }
 .spoiler__top {
   display: flex;
@@ -819,7 +893,7 @@ body {
 }
 .spoiler__bottom {
   max-height: 0;
-  transition: max-height 0.1s ease-in-out;
+  transition: max-height 0.15s ease-in-out, visibility 0.05s linear;
   visibility: hidden;
 }
 .spoiler.open .spoiler__bottom {
@@ -828,5 +902,212 @@ body {
   visibility: visible;
 }
 
+/* Запись на услуги */
+.signup {
+  background-image: url(../img/backgrounds/signup.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding: 111px 0 93px;
+}
+@media (max-width: 560px) {
+  .signup {
+    padding: 80px 0 70px;
+    background-size: 100% 100%;
+  }
+}
+@media (max-width: 560px) {
+  .signup {
+    background-image: url(../img/backgrounds/signup-mobile.png);
+  }
+}
+.signup .page__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 560px) {
+  .signup .page__container {
+    padding: 0 15px;
+  }
+}
+.signup__title {
+  font-family: "Philosopher";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 54px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 17px;
+  max-width: 630px;
+}
+@media (max-width: 560px) {
+  .signup__title {
+    font-size: 30px;
+    line-height: 34px;
+  }
+}
+.signup__phone {
+  font-family: "Philosopher";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+.signup__phone:hover {
+  color: #0099c9;
+}
+@media (max-width: 560px) {
+  .signup__phone {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+.signup__subtitle {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  margin-bottom: 17px;
+}
+@media (max-width: 560px) {
+  .signup__subtitle {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+/* Услуги */
+.services {
+  margin-top: 30px;
+}
+.services__item {
+  padding: 38px 0;
+  border-bottom: 1px solid rgba(47, 33, 28, 0.2);
+}
+.services__item:first-child {
+  border-top: 1px solid rgba(47, 33, 28, 0.2);
+}
+.services__item.py-2 {
+  padding: 8px 0;
+}
+@media (max-width: 767px) {
+  .services__item {
+    padding: 23px 0;
+  }
+}
+.services__block {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+}
+.services__block_col3 {
+  display: grid;
+  grid-template-columns: 1fr max-content 275px;
+  justify-content: space-between;
+  align-items: center;
+}
+.services__block_col3 > *:not(:nth-child(1)) {
+  justify-self: end;
+}
+.services__block_col3 > *:nth-child(2) {
+  font-size: 18px;
+  line-height: 22px;
+}
+@media (max-width: 820px) {
+  .services__block_col3 {
+    grid-template-columns: 1fr max-content max-content;
+    gap: 0 30px;
+  }
+}
+@media (max-width: 767px) {
+  .services__block_col3 {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .services__block_col3 > *:not(:nth-child(1)) {
+    justify-self: initial;
+    font-size: 18px;
+  }
+  .services__block_col3 > *:nth-child(2) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+.services__block_col4 {
+  display: grid;
+  grid-template-columns: 1fr max-content 275px 200px;
+  justify-content: space-between;
+  align-items: center;
+}
+.services__block_col4 > *:not(:nth-child(1)) {
+  justify-self: end;
+}
+.services__block_col4 > *:nth-child(2) {
+  font-size: 18px;
+  line-height: 22px;
+}
+@media (max-width: 900px) {
+  .services__block_col4 {
+    grid-template-columns: max-content 1fr;
+    gap: 10px;
+  }
+  .services__block_col4 > p:first-child {
+    grid-column: 1/3;
+  }
+  .services__block_col4 > *:not(:nth-child(1)) {
+    justify-self: initial;
+  }
+  .services__block_col4 > *:nth-child(3) {
+    justify-self: end;
+  }
+  .services__block_col4 .time-icon {
+    justify-content: initial;
+  }
+}
+@media (max-width: 767px) {
+  .services__block_col4 > *:not(:nth-child(1)) {
+    font-size: 16px;
+  }
+  .services__block_col4 > *:nth-child(2) {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+.services__block_content p {
+  margin-bottom: 6px;
+}
+.services__block_content p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  .services__block_content p {
+    font-size: 18px;
+    line-height: 140%;
+  }
+  .services__block_content p span.info {
+    padding-bottom: 0;
+  }
+}
+.services__block_content h3 {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+/* Галерея */
+.gallery {
+  /*  width: 120%; */
+}
+.gallery__img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 /* Шапка */
 /* Подвал */

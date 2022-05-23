@@ -1,0 +1,33 @@
+.section {
+
+    &_gallery {
+    }
+
+    &__title {
+    }
+
+    &__subtitle {
+    }
+}
+.page {
+
+    &__container {
+    }
+}
+.swiper {
+}
+.gallery {
+   /*  width: 120%; */
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__title {
+    }
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}

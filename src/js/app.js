@@ -6,3 +6,13 @@ spoilers.forEach(spoiler => {
         spoiler.classList.toggle('open')
     })
 })
+
+var gallery = new Swiper(".gallery", {
+    slidesPerView: 4,
+    centeredSlides: true,
+    grabCursor: true,
+    spaceBetween: 100
+    
+});
+gallery.allowSlideNext = true
+gallery.activeIndex = 2
