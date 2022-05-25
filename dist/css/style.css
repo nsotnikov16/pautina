@@ -891,6 +891,94 @@ body {
     margin-right: 6px;
   }
 }
+.background {
+  background-image: url(../img/backgrounds/banner.png);
+  background-size: cover;
+  background-color: #FEF1EA;
+}
+@media (max-width: 767px) {
+  .background {
+    background-image: url(../img/backgrounds/banner-mobile.png);
+    background-position: bottom;
+  }
+}
+
+/* Мессенджеры */
+.messengers {
+  display: inline-block;
+  margin-left: 30px;
+  position: relative;
+}
+.messengers_header .messengers__item:not(.messengers__item_first) {
+  margin-bottom: 10px;
+}
+.messengers__hide {
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+}
+.messengers__item:not(.messengers__item_first) {
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.45s ease-in-out, visibility 0.1s linear, opacity 0.1s linear;
+}
+.messengers__item_first a {
+  animation: pulse 1.5s ease infinite;
+}
+.messengers a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+.messengers.open .messengers__item {
+  visibility: visible;
+  max-height: 500px;
+  opacity: 1;
+}
+.messengers.open .messengers__hide {
+  opacity: 1;
+  margin-top: 15px;
+}
+
+.whatsapp {
+  background-color: #29a71a;
+  background-image: url(../img/wa.svg);
+  background-size: 25px 25px;
+}
+
+.viber {
+  background-color: #6f3faa;
+  background-image: url(../img/viber.svg);
+  background-size: 25px 25px;
+}
+
+.telegram {
+  background-color: #039be5;
+  background-image: url(../img/tlg.svg);
+  background-size: 21px 21px;
+}
+
+.close {
+  background-color: white;
+  background-image: url(../img/close.svg);
+  background-size: 17px 17px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
 /* Почему у нас хорошо? */
 .section_why {
   padding: 105px 0 135px;
@@ -1587,6 +1675,167 @@ body {
 }
 
 /* Шапка */
+.header {
+  color: white;
+  padding-top: 34px;
+  background: linear-gradient(180deg, #0e0a07 0%, rgba(14, 10, 7, 0.8) 60.42%, rgba(14, 10, 7, 0) 100%);
+}
+.header__container {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content max-content max-content;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .header {
+    padding-top: 15px;
+  }
+}
+.header__name-company {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 27px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-left: 22px;
+}
+@media (max-width: 1023px) {
+  .header__block_address {
+    display: none;
+  }
+}
+.header__block_info {
+  grid-column: 1/6;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(45px);
+}
+.header__phone {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 24px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.header__mode {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #d6a270;
+}
+.header__address {
+  font-size: 16px;
+  line-height: 155%;
+  max-width: 150px;
+  margin-right: 18px;
+  justify-self: end;
+  float: right;
+  margin-left: 70px;
+}
+
+.burger {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #007296;
+}
+.burger:hover {
+  cursor: pointer;
+}
+.burger span {
+  width: 22px;
+  height: 2px;
+  margin-bottom: 5px;
+  background-color: white;
+}
+.burger span:last-child {
+  margin-bottom: 0;
+}
+
+/* Баннер */
+.banner {
+  padding: 100px 0 150px;
+  color: white;
+}
+@media (max-width: 767px) {
+  .banner {
+    padding: 45px 0 75px;
+  }
+}
+.banner__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.banner__title {
+  font-family: "Philosopher";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 120%;
+  /* or 86px */
+  text-align: center;
+  margin-bottom: 49px;
+  max-width: 850px;
+}
+@media (max-width: 767px) {
+  .banner__title {
+    font-size: 40px;
+    line-height: 120%;
+    margin-bottom: 34px;
+    margin-top: 35px;
+  }
+}
+.banner__subtitle {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 26px;
+  margin-bottom: 45px;
+}
+@media (max-width: 767px) {
+  .banner__subtitle {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 26px;
+  }
+}
+.banner__price {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #d6a270;
+  margin-bottom: 26px;
+}
+@media (max-width: 767px) {
+  .banner__price {
+    margin-bottom: 17px;
+    font-size: 14px;
+    line-height: 17px;
+    color: white;
+  }
+}
+.banner .btn {
+  height: 60px;
+  width: 220px;
+}
+@media (max-width: 767px) {
+  .banner .btn {
+    width: 160px;
+    height: 45px;
+    font-size: 12px;
+    line-height: 13px;
+  }
+}
+
 /* Подвал */
 .footer {
   background-image: url(../img/backgrounds/footer.png);

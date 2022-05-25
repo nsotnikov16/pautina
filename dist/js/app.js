@@ -87,3 +87,12 @@ if (isMobile) {
         })
     }
 }
+
+const messangers = ['whatsapp', 'viber', 'telegram']
+const a = document.querySelector('.messengers__item_first a')
+messangers.forEach(item => {
+    let className = a.className
+    setInterval(() => {
+        
+    }, 1000);
+})

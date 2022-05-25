@@ -393,3 +393,15 @@
     }
   }
 }
+
+
+.background {
+  background-image: url(../img/backgrounds/banner.png);
+  background-size: cover;
+  background-color: #FEF1EA;
+
+  @media(max-width: 767px) {
+    background-image: url(../img/backgrounds/banner-mobile.png);
+    background-position: bottom;
+  }
+}

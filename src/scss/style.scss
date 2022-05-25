@@ -91,6 +91,10 @@ body {
 /* Прочее */
 @import "other";
 
+
+/* Мессенджеры */
+@import 'messengers';
+
 /* Почему у нас хорошо? */
 @import "why";
 
@@ -114,6 +118,9 @@ body {
 
 /* Шапка */
 @import "header";
+
+/* Баннер */
+@import 'banner';
 
 /* Подвал */
 @import "footer";

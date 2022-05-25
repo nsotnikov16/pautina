@@ -1,0 +1,94 @@
+.messengers {
+    display: inline-block;
+
+    margin-left: 30px;
+    position: relative;
+    &_header {
+        .messengers__item {
+            &:not(.messengers__item_first) {
+                margin-bottom: 10px;
+            }
+
+            &_first {
+            }
+        }
+    }
+
+    &__hide {
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+    }
+
+    &__item {
+        &:not(.messengers__item_first) {
+            visibility: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.45s ease-in-out, visibility 0.1s linear, opacity 0.1s linear;
+        }
+
+        &_first {
+            a {
+                animation: pulse 1.5s ease infinite;
+            }
+            
+        }
+    }
+    a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+    }
+
+    &.open {
+        .messengers__item {
+            visibility: visible;
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .messengers__hide {
+            opacity: 1;
+            margin-top: 15px;
+        }
+    }
+}
+.whatsapp {
+    background-color: #29a71a;
+    background-image: url(../img/wa.svg);
+    background-size: 25px 25px;
+}
+.viber {
+    background-color: #6f3faa;
+    background-image: url(../img/viber.svg);
+    background-size: 25px 25px;
+}
+.telegram {
+    background-color: #039be5;
+    background-image: url(../img/tlg.svg);
+    background-size: 21px 21px;
+}
+
+.close {
+    background-color: white;
+    background-image: url(../img/close.svg);
+    background-size: 17px 17px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+    }
+
+    70% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
