@@ -9,7 +9,7 @@
         align-items: center;
     }
 
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
         padding-top: 15px;
     }
 
@@ -30,12 +30,14 @@
         }
 
         &_info {
-            grid-column: 1/6;
-            grid-row: 2/3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transform: translateY(45px);
+            @media (max-width: 1023px) {
+                grid-column: 1/6;
+                grid-row: 2/3;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transform: translateY(45px);
+            }
         }
     }
 
