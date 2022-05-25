@@ -32,7 +32,7 @@ body {
     @media (max-width: 1310px) {
       padding: 0 30px;
     }
-    @media(max-width: 767px) {
+    @media (max-width: 767px) {
       padding: 0 15px;
     }
   }
@@ -88,12 +88,10 @@ body {
 /* Контент */
 @import "content";
 
+/* Мессенджеры */
+@import "messengers";
 /* Прочее */
 @import "other";
-
-
-/* Мессенджеры */
-@import 'messengers';
 
 /* Почему у нас хорошо? */
 @import "why";
@@ -108,19 +106,19 @@ body {
 @import "signup";
 
 /* Услуги */
-@import 'services';
+@import "services";
 
 /* Галерея */
 @import "gallery";
 
 /* Карточки */
-@import 'cards';
+@import "cards";
 
 /* Шапка */
 @import "header";
 
 /* Баннер */
-@import 'banner';
+@import "banner";
 
 /* Подвал */
 @import "footer";

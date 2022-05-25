@@ -88,11 +88,13 @@ if (isMobile) {
     }
 }
 
-const messangers = ['whatsapp', 'viber', 'telegram']
-const a = document.querySelector('.messengers__item_first a')
-messangers.forEach(item => {
-    let className = a.className
-    setInterval(() => {
-        
-    }, 1000);
+const signups = document.querySelectorAll('.btn_signup')
+const messengers = document.querySelector('.messengers')
+signups.forEach(item => item.addEventListener(isMobile ? 'click' : 'mouseenter', () => {
+    item.append(messengers)
+    setTimeout(() => messengers.classList.add('open'), 100)
+}))
+
+document.addEventListener(isMobile ? 'click' : 'mousemove', (e) => {
+    if (!e.target.closest('.messengers') && !e.target.closest('.btn_signup')) messengers.classList.remove('open')
 })
