@@ -183,6 +183,11 @@ class Popup {
         this._img = this._popupElement.id === "photo" ? this._popupElement.querySelector('.popup__img') : null;
         this._handleEscClose = this._handleEscClose.bind(this)
         this._openingLinks = document.querySelectorAll(`[data-pointer="${this._popupElement.id}"]`)
+        this.title = this._popupElement.querySelector('.detail__title')
+        this.content = this._popupElement.querySelector('.detail__content')
+        this.time = this._popupElement.querySelector('.detail__time')
+        this.price = this._popupElement.querySelector('.detail__price')
+        this.htmlElements = [this.title, this.content, this.time, this.price]
         this.setEventListeners()
     }
 
@@ -191,6 +196,10 @@ class Popup {
         document.body.style.overflow = "hidden";
         this._popupElement.classList.add('popup_opened')
         document.addEventListener('keydown', this._handleEscClose);
+        this.htmlElements.forEach(item => {
+            item.innerHTML = ''
+            item.innerHTML = details[el.dataset.detail][item.dataset.props]
+        })
     }
 
     close() {
@@ -198,6 +207,7 @@ class Popup {
         this._popupElement.classList.remove('popup_opened');
         document.body.style.overflow = "visible";
         document.removeEventListener('keydown', this._handleEscClose);
+
     }
 
     _handleEscClose(evt) {
@@ -218,3 +228,19 @@ class Popup {
         this._popupElement.addEventListener('click', this._handleOverlayClick.bind(this));
     }
 }
+const popups = document.querySelectorAll('.popup')
+let popupsObj = {}
+if (popups.length > 0) popups.forEach(item => { popupsObj[item.id] = new Popup(item) })
+
+
+// Скролл программы детально
+
+var swiper = new Swiper(".detail-swiper", {
+    direction: "vertical",
+    slidesPerView: "auto",
+    freeMode: true,
+    scrollbar: {
+        el: ".detail-swiper .swiper-scrollbar",
+    },
+    mousewheel: true,
+});
