@@ -38,6 +38,30 @@
         visibility: visible;
       }
     }
+
+    @media (max-width: 600px) {
+      &:nth-child(odd) {
+        &:hover {
+          .why__tooltip {
+            left: 0;
+            &::before {
+              left: 15%;
+            }
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        &:hover {
+          .why__tooltip {
+            right: 0;
+            &::before {
+              right: 15%;
+            }
+          }
+        }
+      }
+    }
   }
 
   &__block {
@@ -117,6 +141,13 @@
 
     @media (max-width: 1310px) {
       display: none;
+    }
+    @media (max-width: 600px) {
+      display: block;
+      max-width: 345px;
+      &::before {
+        left: initial;
+      }
     }
   }
 

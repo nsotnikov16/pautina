@@ -1031,6 +1031,20 @@ body {
   opacity: 1;
   visibility: visible;
 }
+@media (max-width: 600px) {
+  .why__item:nth-child(odd):hover .why__tooltip {
+    left: 0;
+  }
+  .why__item:nth-child(odd):hover .why__tooltip::before {
+    left: 15%;
+  }
+  .why__item:nth-child(even):hover .why__tooltip {
+    right: 0;
+  }
+  .why__item:nth-child(even):hover .why__tooltip::before {
+    right: 15%;
+  }
+}
 .why__block {
   display: flex;
   flex-direction: column;
@@ -1106,6 +1120,15 @@ body {
 @media (max-width: 1310px) {
   .why__tooltip {
     display: none;
+  }
+}
+@media (max-width: 600px) {
+  .why__tooltip {
+    display: block;
+    max-width: 345px;
+  }
+  .why__tooltip::before {
+    left: initial;
   }
 }
 .why__tooltip-title {
