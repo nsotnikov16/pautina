@@ -515,7 +515,7 @@ body {
   /* flex-direction: column; */
   align-items: center;
   position: absolute;
-  width: 150px;
+  /* width: 150px; */
   z-index: 990;
   visibility: hidden;
   max-height: 0;
@@ -524,6 +524,9 @@ body {
 }
 .messengers__item {
   margin-right: 10px;
+}
+.messengers__item:last-child {
+  margin-right: 0;
 }
 .messengers a {
   width: 40px;
@@ -556,6 +559,12 @@ body {
 .telegram {
   background-color: #039be5;
   background-image: url(../img/tlg.svg);
+  background-size: 21px 21px;
+}
+
+.close {
+  background-color: white;
+  background-image: url(../img/close.svg);
   background-size: 21px 21px;
 }
 
@@ -1600,14 +1609,15 @@ body {
   padding: 32px 0 30px;
   border: 1px solid white;
 }
-.cards__card_blue {
+.cards__card:hover {
+  cursor: pointer;
   background-color: #0c3d4c;
   color: white;
 }
-.cards__card_blue .cards__line {
+.cards__card:hover .cards__line {
   background-image: url(../img/line1.svg);
 }
-.cards__card_blue .cards__price {
+.cards__card:hover .cards__price {
   color: white;
 }
 .cards__title {
@@ -1733,6 +1743,51 @@ body {
   float: right;
   margin-left: 70px;
 }
+@media (max-width: 560px) {
+  .header .btn_signup {
+    display: none;
+  }
+}
+.header__messengers {
+  flex-direction: column;
+  right: 15px;
+  width: auto;
+  top: 15px;
+}
+@media (min-width: 561px) {
+  .header__messengers {
+    display: none;
+  }
+}
+.header__messengers li {
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+.header__messengers li:not(.header__messengers li:first-child) {
+  max-height: 0;
+  visibility: hidden;
+  transition: max-height 0.35s ease-in-out;
+}
+.header__messengers.open-list li:first-child a {
+  background-color: white;
+  background-image: url(../img/close.svg);
+  background-size: 18px 18px;
+  transform: rotate(180deg);
+  transition: transform 0.25s linear;
+}
+.header__messengers.open-list li {
+  max-height: 500px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+@media (max-width: 560px) {
+  .header__name-company, .header__container .burger {
+    z-index: 200;
+  }
+  .header__container .burger {
+    position: initial;
+  }
+}
 
 .burger {
   width: 45px;
@@ -1755,6 +1810,131 @@ body {
 }
 .burger span:last-child {
   margin-bottom: 0;
+}
+.burger_close {
+  background-color: white;
+  position: absolute;
+  top: 38px;
+  right: 20px;
+}
+.burger_close span {
+  background-color: #007296;
+  margin-bottom: 0;
+  transition: transform 0.25s linear;
+}
+.burger_close span:nth-child(2) {
+  display: none;
+}
+.burger_close span:nth-child(1) {
+  transform: rotate(45deg) translateX(1px);
+}
+.burger_close span:nth-child(3) {
+  transform: rotate(-45deg) translateX(1px);
+}
+
+/* Меню */
+.menu {
+  position: absolute;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #007296;
+  top: 0;
+  z-index: 99;
+  padding-bottom: 76px;
+  visibility: hidden;
+  transform: translateX(-200%);
+  transition: transform 0.25s linear;
+}
+.menu.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+@media (max-width: 560px) {
+  .menu {
+    width: 100vw;
+    /* height: 100vh; */
+    align-items: center;
+  }
+  .menu__top, .menu__bottom {
+    padding-left: 0 !important;
+  }
+  .menu__top {
+    padding-top: 125px !important;
+  }
+  .menu .burger_close {
+    display: none;
+  }
+  .menu li {
+    text-align: center;
+  }
+  .menu__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+  }
+}
+.menu__top, .menu__bottom {
+  padding-left: 90px;
+  position: relative;
+}
+.menu__bottom {
+  margin-top: 90px;
+  padding-top: 60px;
+}
+.menu__top {
+  padding-top: 164px;
+  position: relative;
+}
+.menu ul {
+  display: inline-flex;
+  flex-direction: column;
+}
+.menu li {
+  margin-bottom: 22px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+  display: inline-block;
+}
+.menu li:last-child {
+  margin-bottom: 0;
+}
+.menu__phone {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.menu__mode {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  /* identical to box height */
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.menu__address {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+.menu .cards__line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../img/line-menu.svg);
+  width: 440px;
+}
+@media (max-width: 560px) {
+  .menu .cards__line {
+    width: 100vw;
+  }
 }
 
 /* Баннер */

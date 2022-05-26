@@ -13,7 +13,9 @@
     justify-content: space-between;
     padding: 32px 0 30px;
     border: 1px solid white;
-    &_blue {
+
+    &:hover {
+      cursor: pointer;
       background-color: #0c3d4c;
       color: white;
       .cards__line {
