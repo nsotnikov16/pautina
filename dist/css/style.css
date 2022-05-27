@@ -983,6 +983,47 @@ body {
   overflow: initial;
 }
 
+.section__title,
+.section__subtitle,
+.banner__title {
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-30%);
+  transition: all 0.8s ease 0.1s;
+}
+.section__title._animate,
+.section__subtitle._animate,
+.banner__title._animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.banner__subtitle,
+.banner__price,
+.banner .btn {
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.8s ease 0.1s;
+}
+.banner__subtitle._animate,
+.banner__price._animate,
+.banner .btn._animate {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.banner__subtitle {
+  transform: translateX(-30%);
+}
+
+.banner__price {
+  transform: translateX(30%);
+}
+
+.banner .btn {
+  transform: translateY(30%);
+}
+
 /* Почему у нас хорошо? */
 .section_why {
   padding: 105px 0 135px;

@@ -154,18 +154,15 @@
         padding-left: 15px;
         flex-direction: row;
       }
-
     }
 
     &.top {
       .messengers {
         bottom: 100%;
-        
+
         padding-bottom: 15px;
         flex-direction: row;
       }
-
-     
     }
   }
 }
@@ -436,4 +433,40 @@
 }
 .swiper {
   overflow: initial;
+}
+
+.section__title,
+.section__subtitle,
+.banner__title {
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-30%);
+  transition: all 0.8s ease 0.1s;
+  &._animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.banner__subtitle,
+.banner__price,
+.banner .btn {
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.8s ease 0.1s;
+  &._animate {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.banner__subtitle {
+  transform: translateX(-30%);
+}
+.banner__price {
+  transform: translateX(30%);
+}
+
+.banner .btn {
+  transform: translateY(30%);
 }
